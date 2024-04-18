@@ -44,8 +44,8 @@ function renderHeroCard(heroData) {
                     <li class="list-group-item">Publicado por: ${heroData.biography.publisher}</li>
                     <li class="list-group-item">Ocupación: ${heroData.work.occupation}</li>
                     <li class="list-group-item">Primera aparición: ${heroData.biography['first-appearance']}</li>
-                    <li class="list-group-item">Altura: ${heroData.appearance.height[1]}</li>
-                    <li class="list-group-item">Peso: ${heroData.appearance.weight[1]}</li>
+                    <li class="list-group-item">Altura: ${heroData.appearance.height[0]} - ${heroData.appearance.height[1]}</li>
+                    <li class="list-group-item">Peso: ${heroData.appearance.weight[0]} - ${heroData.appearance.weight[1]}</li>
                     <li class="list-group-item">Alianzas: ${heroData.biography.aliases}</li>
                 </ul>
             </div>
