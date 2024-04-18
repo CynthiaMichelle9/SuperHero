@@ -36,3 +36,32 @@
 }
 
 /* Formulario */
+#form {
+    padding: 2rem;
+}
+
+/* Tarjetas del superHero */
+#hero-cards {
+    max-width: 100%;
+}
+.card {
+    width: 50%;
+    margin: 2rem;
+
+}
+
+.superhero-image {
+    max-width: 300px; 
+    height: auto;
+    margin:1rem;
+    border-radius: 6px;
+}
+
+.card-header {
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.list-group {
+    width: 55%;
+}
