@@ -2,9 +2,13 @@ $(document).ready(function () {
     $('#superhero-form').submit(function (event) {
         event.preventDefault(); // Evita que se envíe el formulario
 
-        var heroNumber = $('#inputHero').val(); // Captura el valor ingresado en el campo de texto
-        // Comprobar si el valor ingresado es un número
-        if (isNaN(heroNumber)) {
+        let heroNumber = $('#inputHero').val(); // Captura el valor ingresado en el campo de texto
+
+        // Utiliza parseInt() para parsear el valor a un entero
+        let heroId = parseInt(heroNumber);
+
+        // Comprobar si el valor ingresado es un número válido (entero)
+        if (isNaN(heroId)) {
             alert("Por favor, ingrese solo números.");
             return; // Detener el proceso si no es un número
         }
@@ -18,6 +22,7 @@ $(document).ready(function () {
 
                 // Renderizar la información recibida dinámicamente (paso 5)
                 renderHeroCard(data);
+                renderHeroChart(data);
             },
             error: function (xhr, status, error) {
                 console.error("Error al consultar la API:", error);
@@ -28,7 +33,7 @@ $(document).ready(function () {
 
 
 function renderHeroCard(heroData) {
-    var cardHtml = `
+    let cardHtml = `
         <div class="card border-danger">
             <div class="card-header">SuperHero Encontrado</div>
             <div class="card-body d-flex">
@@ -50,3 +55,28 @@ function renderHeroCard(heroData) {
     $('#hero-cards').html(cardHtml);
 };
 
+function renderHeroChart(heroData) {
+    let options = {
+        title: {
+            text: "Estadísticas de poder para " + heroData.name
+        },
+        data: [{
+            type: "pie",
+            startAngle: 45,
+            showInLegend: true,
+            legendText: "{label}",
+            indexLabel: "{label} ({y})",
+            yValueFormatString: "#,##0.#",
+            dataPoints: [
+                { label: "Durabilidad", y: parseFloat(heroData.powerstats.durability) },
+                { label: "Fuerza", y: parseFloat(heroData.powerstats.strength) },
+                { label: "Velocidad", y: parseFloat(heroData.powerstats.speed) },
+                { label: "Inteligencia", y: parseFloat(heroData.powerstats.intelligence) },
+                { label: "Poder", y: parseFloat(heroData.powerstats.power) },
+                { label: "Combate", y: parseFloat(heroData.powerstats.combat) }
+            ]
+        }]
+    };
+
+    $("#chartContainer").CanvasJSChart(options);
+}

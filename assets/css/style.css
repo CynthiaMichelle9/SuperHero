@@ -40,19 +40,31 @@
     padding: 2rem;
 }
 
-/* Tarjetas del superHero */
-#hero-cards {
+/* Contenedor principal   */  
+#main-container {
     max-width: 100%;
 }
-.card {
+
+/* Gráfica */
+
+#chartContainer {
     width: 50%;
-    margin: 2rem;
+    height: 40%;
+    margin: 3rem;
+}
+
+/* Tarjetas del superHero */
+#hero-cards {
+    width: 50%;
+}
+.card {
+    margin: 1rem;
 
 }
 
 .superhero-image {
-    max-width: 300px; 
-    height: auto;
+    height: 30rem;
+    width: 15rem;
     margin:1rem;
     border-radius: 6px;
 }
@@ -63,5 +75,5 @@
 }
 
 .list-group {
-    width: 55%;
+    width: 50%;
 }
