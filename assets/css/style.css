@@ -19,3 +19,20 @@
     width: 3rem;
     height: 3rem;
 }
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 1rem;
+}
+
+.hero-title {
+    font-weight: 600;
+}
+
+.hero-img {
+    height: 24rem;
+}
+
+/* Formulario */
