@@ -6,10 +6,16 @@
     box-sizing:content-box;
 }
 
-body {
-    background-color: rgb(24, 24, 24);
-}
-
 * {
     font-family: "Montserrat", sans-serif;
+}
+
+/* NavBar */
+.navbar {
+    background-color:rgb(24, 24, 24);
+}
+
+.navbar-logo {
+    width: 3rem;
+    height: 3rem;
 }
