@@ -1,0 +1,15 @@
+/* Estilos base y tipografía */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:content-box;
+}
+
+body {
+    background-color: rgb(24, 24, 24);
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
